@@ -1,7 +1,7 @@
 ![1035255](https://github.com/user-attachments/assets/7cdae74a-7836-4365-af4e-737124531edf)
 
 # Creating Users with Powershell
-This tutorial outlines the lifecycle of a ticket from intake to resolution within the open-source help desk ticketing system osTicket.<br />
+We will make configuration that allow Non-Admin domain users to let them log in to Client-1 via Remote Desktop. We’ll be able to create a whole bunch of users through powershell.<br />
 
 
 <h2>Video Demonstration</h2>
