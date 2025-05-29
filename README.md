@@ -30,24 +30,24 @@ This tutorial outlines the lifecycle of a ticket from intake to resolution withi
 
 Step 1: Setup Remote Desktop for non-administrative users on Client-1
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/215Zki1.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-To allow non-administrative users to log into Client-1, log in as mydomain.com\jane_admin. Open System Settings, go to Remote Desktop under Related Settings, and click Select Users. Click Add, type domain users, check the name, and confirm. This grants remote desktop access to all domain users. While Group Policy is typically used for this at scale, this manual method is sufficient for testing.
+To allow non-administrative users to log into Client-1, log in as mydomain.com\jane_admin. Right click Start menu, Open System, go to Remote Desktop under Related Settings, and click Select Users. Click Add, type: "domain users", check the name, and confirm. This grants remote desktop access to all domain users. While Group Policy is typically used for this at scale, this manual method is sufficient for testing.
 </p>
 <br />
 
 Step 2: Create a bunch of additional users
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/tClU2Ws.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Next, on DC-1, open PowerShell ISE as an administrator. Create a new script file by clicking the white page icon in the top-left corner and save it as create_users.ps1.
+Next, on DC-1, open PowerShell ISE as an administrator. Create a new script file by clicking the white page icon in the top-left corner and save it as "create users".
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/EdPKBtl.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 Then, visit the following GitHub link and copy the script: (https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1) Paste the script into your PowerShell ISE window and run it. This script will generate and create thousands of user accounts in the _EMPLOYEES OU.
