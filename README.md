@@ -10,28 +10,39 @@ This tutorial outlines the lifecycle of a ticket from intake to resolution withi
 
 <h2>Environments and Technologies Used</h2>
 
-- Microsoft Azure (Virtual Machines/Compute)
+- Microsoft Azure (Resources Group, Virtual Machines/Computer, Virtual Machines/Window Server, Virtual Network and Subnet)
 - Remote Desktop
-- Internet Information Services (IIS)
+- Active Directory Users and Computers (ADUC)
+- Powershell
 
 <h2>Operating Systems Used </h2>
 
-- Windows 10</b> (21H2)
+- Windows 10 (Pro, version 22H2 - x64 Gen2)
+- Windows Server 2022 Datacenter: (Azure Edition - x64 Gen2)
 
-<h2>Ticket Lifecycle Stages</h2>
+<h2>Creating Users Steps</h2>
 
-- Intake
-- Assignment and Communication
-- Working the Issue
-- Resolution
+- Step 1: Setup Remote Desktop for non-administrative users on Client-1
+- Step 2: Create a bunch of additional users
+- Step 3: Attempt to log into client-1 with one of the users
 
 <h2>Lifecycle Stages</h2>
 
+Step 1: Setup Remote Desktop for non-administrative users on Client-1
 <p>
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+To allow non-administrative users to log into Client-1, log in as mydomain.com\jane_admin. Open System Settings, go to Remote Desktop under Related Settings, and click Select Users. Click Add, type domain users, check the name, and confirm. This grants remote desktop access to all domain users. While Group Policy is typically used for this at scale, this manual method is sufficient for testing.
+</p>
+<br />
+
+Step 2: Create a bunch of additional users
+<p>
+<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Next, on DC-1, open PowerShell ISE as an administrator. Create a new script file by clicking the white page icon in the top-left corner and save it as create_users.ps1.
 </p>
 <br />
 
@@ -39,14 +50,16 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Then, visit the following GitHub link and copy the script: (https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1) Paste the script into your PowerShell ISE window and run it. This script will generate and create thousands of user accounts in the _EMPLOYEES OU.
 </p>
 <br />
 
+
+Step 3: Attempt to log into client-1 with one of the users
 <p>
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Once the script has finished running (which may take around 8 minutes), open ADUC and navigate to the _EMPLOYEES OU to verify that the accounts have been created. Select one of the new accounts and attempt to log into Client-1 using the credentials: Username: mydomain.com\accountname, Password: Password1. This confirms that the domain and user provisioning are functioning correctly.
 </p>
 <br />
