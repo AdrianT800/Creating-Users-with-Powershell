@@ -57,7 +57,7 @@ Then, visit the following GitHub link and copy the script: (https://github.com/j
 
 Step 3: Attempt to log into client-1 with one of the users
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/94brhsC.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 Once the script has finished running (which may take around 8 minutes), open ADUC and navigate to the _EMPLOYEES OU to verify that the accounts have been created. Select one of the new accounts and attempt to log into Client-1 using the credentials: Username: mydomain.com\accountname, Password: Password1. This confirms that the domain and user provisioning are functioning correctly.
