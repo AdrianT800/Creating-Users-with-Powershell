@@ -6,7 +6,7 @@ We will make configuration that allow Non-Admin domain users to let them log in 
 
 <h2>Video Demonstration</h2>
 
-- ### [YouTube: How to create, work, and resolves tickets within osTicket](https://www.youtube.com)
+-  ### [Google Drive: Creating Users with Powershell](https://drive.google.com/file/d/1a_LmNa_fqYY_LYJ2vTWzqOesSx0y66_n/view?usp=drive_link)
 
 <h2>Environments and Technologies Used</h2>
 
